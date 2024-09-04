@@ -1,9 +1,9 @@
 #!/bin/bash -l
 # Standard output and error:
-#SBATCH -o /raven/u/mvigl/raven_batch_example/slurm/job-management/job_%j.out
-#SBATCH -e /raven/u/mvigl/raven_batch_example/slurm/job-management/job_%j.err
+#SBATCH -o /raven/u/jrenusch/raven_batch_hgpf/slurm/job-management/job_%j.out
+#SBATCH -e /raven/u/jrenusch/raven_batch_hgpf/slurm/job-management/job_%j.err
 # Initial working directory:
-#SBATCH -D /raven/u/mvigl/raven_batch_example/run
+#SBATCH -D /raven/u/jrenusch/raven_batch_hgpf/run
 #
 # For CPU (uncomment)
 # Number of nodes and MPI tasks per node:
@@ -20,7 +20,7 @@
 #SBATCH --mem=125000
 #
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=mvigl@mpcdf.mpg.de
+#SBATCH --mail-user=jonathan.renusch@tum.de
 
 # Load compiler and MPI modules (must be the same as used in conda env)
 module purge
@@ -36,16 +36,6 @@ conda activate gpu_env
 #or just pip install -r requirements.txt
 
 config="$1"
-checkpoint="$2"
-mess="$3"
-data="$4"
-subset="$5"
-data_val="$6"
-out="$7"
-bs="$8"
-se="$9"
-
-
 
 # Start run
-srun /raven/u/mvigl/raven_batch_example/slurm/job.sh "$config" "$checkpoint" "$mess" "$data" "$subset" "$data_val" "$out" "$bs" "$se"
+srun /raven/u/jrenusch/raven_batch_hgpf/slurm/job.sh "$config" 

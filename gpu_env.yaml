@@ -5,10 +5,12 @@ channels:
 - conda-forge
 dependencies:
 - python=3.9
+- root=6.30.02
+- uproot
 - pip
 - setuptools
 - matplotlib
-- numpy=1.25.1
+- numpy
 - jupyter
 - notebook
 - jupyterlab
@@ -25,7 +27,7 @@ dependencies:
   - pandas
   - awkward
   - comet_ml  
-  - -e /raven/u/mvigl/public/  
+  - -e /raven/u/jrenusch/public
 #- pytorch==2.0.0+cpuonly # for data loading
 #- pip:
 #  - distrax
